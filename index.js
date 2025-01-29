@@ -2,8 +2,8 @@ const express = require('express')
 const app = express()
 require('dotenv').config(); 
 const port  = process.env.PORT 
-const db = require('../mongoose')
-const Task = require('../Models/Task')
+const db = require('./mongoose')
+const Task = require('./Models/Task')
 app.use(express.json())
 
 app.get('/',async function(req,res){
