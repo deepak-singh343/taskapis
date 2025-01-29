@@ -2,8 +2,8 @@ const express = require('express')
 const app = express()
 require('dotenv').config(); 
 const port  = process.env.PORT 
-const db = require('./mongoose')
-const Task = require('./Models/Task')
+const db = require('../mongoose')
+const Task = require('../Models/Task')
 app.use(express.json())
 
 app.get('/',async function(req,res){
@@ -77,10 +77,10 @@ app.put('/update', async (req, res) => {
     }
 });
 
-
-app.listen(port,(err)=>{
-    if(err)
-        console.log(err)
-    else
-        console.log(`app is listening on port ${port}`)
-})
+module.exports = app
+// app.listen(port,(err)=>{
+//     if(err)
+//         console.log(err)
+//     else
+//         console.log(`app is listening on port ${port}`)
+// })
