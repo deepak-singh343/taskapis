@@ -9,7 +9,7 @@ app.use(express.json())
 app.get('/',async function(req,res){
     try {
         const tasks = await Task.find()
-        console.log(tasks)
+        console.log('tasks',tasks)
         res.status(200).json(tasks);
     } catch (error) {
         console.log('error',error)
