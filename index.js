@@ -77,10 +77,10 @@ app.put('/update', async (req, res) => {
     }
 });
 
-module.exports = app
-// app.listen(port,(err)=>{
-//     if(err)
-//         console.log(err)
-//     else
-//         console.log(`app is listening on port ${port}`)
-// })
+// module.exports = app
+app.listen(port,(err)=>{
+    if(err)
+        console.log(err)
+    else
+        console.log(`app is listening on port ${port}`)
+})
