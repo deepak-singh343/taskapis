@@ -18,7 +18,7 @@ app.get('/',async function(req,res){
 
 app.get('/default',async function(req,res){
     try {
-        res.status(200).json("default");
+        res.status(200).json("default request");
     } catch (error) {
         console.log('error',error)
     }
