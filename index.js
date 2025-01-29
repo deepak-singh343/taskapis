@@ -16,6 +16,14 @@ app.get('/',async function(req,res){
     }
 })
 
+app.get('/default',async function(req,res){
+    try {
+        res.status(200).json("default");
+    } catch (error) {
+        console.log('error',error)
+    }
+})
+
 app.post('/add',async function(req,res){
     try {
         console.log(req.body)
@@ -36,6 +44,7 @@ app.delete('/delete/:id',async(req,res)=>{
     try {
         const id = req.params.id
         const res = await Task.findByIdAndDelete(id)
+        res.status(201).json({ message: "Task deleted successfully" });
         console.log(res)
     } catch (error) {
         console.log(error)
